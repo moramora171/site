@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Recipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        .video-section {
+            border: 1px solid #ccc;
+            margin: 20px auto;
+            padding: 10px;
+            max-width: 600px;
+            text-align: center;
+        }
+        .viewer-counter {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        #hidden-content {
+            display: none;
+        }
+        .quiz-section {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .quiz-options button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .quiz-options button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #666;
+        }
+        .progress-section {
+            margin-top: 20px;
+        }
+        .progress-bar {
+            width: 80%;
+            height: 20px;
+            background-color: #e0e0e0;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress-fill {
+            height: 100%;
+            width: 0;
+            background-color: #4caf50;
+        }
+        .offer-section {
+            display: none;
+            margin-top: 30px;
+            background-color: #8bc34a;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .offer-button {
+            margin-top: 20px;
+            background-color: #ffeb3b;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .offer-button:hover {
+            background-color: #fdd835;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Attention: This presentation will be available only until today</div>
+
+    <div class="container">
+        <div class="video-section">
+            <!-- Insert your video JavaScript code here -->
+            <p><div id="vid_65985cf5c8f0d7000af08fbc" style="position: relative; width: 100%; padding: 56.25% 0 0;"> <img id="thumb_65985cf5c8f0d7000af08fbc" src="https://images.converteai.net/10d15ba1-6af1-4ff4-a726-9a64f39ff19d/players/65985cf5c8f0d7000af08fbc/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_65985cf5c8f0d7000af08fbc" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_65985cf5c8f0d7000af08fbc"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/10d15ba1-6af1-4ff4-a726-9a64f39ff19d/players/65985cf5c8f0d7000af08fbc/player.js", s.async=!0,document.head.appendChild(s); </script> <style> .elementor-element:has(#smartplayer) { width: 100%; } </style></p>
+        </div>
+
+        <div class="viewer-counter" id="viewer-counter">560 people watching now...</div>
+
+        <div id="hidden-content">
+            <div class="quiz-section" id="quiz-section">
+                <h2>See If You Qualify</h2>
+                <p>You're just <strong>one step away</strong> from achieving the <u>body you desire!</u> Simply provide 5 quick details about yourself, and <strong>we'll ensure that the exclusive Lipozem formula</strong> is perfectly <u>tailored to meet your needs</u>.</p>
+
+                <div class="quiz-question" id="quiz-question">What’s your sex?</div>
+                <div class="quiz-options" id="quiz-options">
+                    <button onclick="nextQuestion('Female')">Female</button>
+                    <button onclick="nextQuestion('Male')">Male</button>
+                </div>
+            </div>
+
+            <div class="progress-section" id="progress-section" style="display: none;">
+                <h3>Please wait while we prepare the ideal formula for you</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p id="timer">Time remaining: 00:07 seconds</p>
+            </div>
+
+            <div class="offer-section" id="offer-section">
+                <h2>Claim Your Discounted Lipozem&reg; Below While Supplies Last</h2>
+                <h1 id="offer-timer">40:00</h1>
+                <p>Your Exclusive Formula is Ready<br>Claim Your Discounted Lipozem&reg;</p>
+                <a href="https://seu-link-aqui.com" target="_blank">
+                    <button class="offer-button">YES! I'M READY TO TRY LIPOZEM</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">All Rights Reserved &copy; 2024</div>
+
+    <script>
+        let currentQuestion = 0;
+        const questions = [
+            { question: "What’s your sex?", options: ["Female", "Male"] },
+            { question: "How tall are you?", options: ["4'11\" and under", "5'0\" - 5'4\"", "5'5\" - 5'9\""] },
+            { question: "What’s your age?", options: ["45 and above", "35-44", "25-34", "Under 25"] },
+            { question: "What’s your weight?", options: ["Under 120 lbs", "120-159 lbs", "160-199 lbs", "200 lbs and above"] },
+            { question: "How many lbs do you want to lose?", options: ["Less than 10 lbs", "10-20 lbs", "21-30 lbs", "More than 30 lbs"] }
+        ];
+
+        function nextQuestion(answer) {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                const questionElement = document.getElementById('quiz-question');
+                const optionsElement = document.getElementById('quiz-options');
+                questionElement.textContent = questions[currentQuestion].question;
+                optionsElement.innerHTML = '';
+                questions[currentQuestion].options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.textContent = option;
+                    button.onclick = () => nextQuestion(option);
+                    optionsElement.appendChild(button);
+                });
+            } else {
+                document.getElementById('quiz-section').style.display = 'none';
+                document.getElementById('progress-section').style.display = 'block';
+                animateProgressBar();
+            }
+        }
+
+        function animateProgressBar() {
+            const progressFill = document.getElementById('progress-fill');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    progressFill.style.width = width + '%';
+                }
+            }, 70); // Ensures 7 seconds duration
+
+            let timeRemaining = 7;
+            const timerElement = document.getElementById('timer');
+            const timerInterval = setInterval(() => {
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    showOffer();
+                } else {
+                    timeRemaining--;
+                    timerElement.textContent = `Time remaining: 00:0${timeRemaining} seconds`;
+                }
+            }, 1000);
+        }
+
+        function showOffer() {
+            document.getElementById('progress-section').style.display = 'none';
+            document.getElementById('offer-section').style.display = 'block';
+            startOfferTimer();
+        }
+
+        function startOfferTimer() {
+            let timeLeft = 40 * 60; // 40 minutes in seconds
+            const offerTimerElement = document.getElementById('offer-timer');
+            const timerInterval = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                } else {
+                    timeLeft--;
+                    const minutes = Math.floor(timeLeft / 60);
+                    const seconds = timeLeft % 60;
+                    offerTimerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                }
+            }, 1000);
+        }
+
+        function updateViewerCounter() {
+            const counterElement = document.getElementById('viewer-counter');
+            setInterval(() => {
+                const randomViewers = Math.floor(Math.random() * (599 - 531 + 1)) + 531;
+                counterElement.textContent = `${randomViewers} people watching now...`;
+            }, 3000);
+        }
+
+        function showHiddenContentAfterDelay(minutes) {
+            const delay = minutes * 60 * 1000; // Convert minutes to milliseconds
+            setTimeout(() => {
+                document.getElementById('hidden-content').style.display = 'block';
+            }, delay);
+        }
+
+        // Show hidden content after 50 minutes by default
+        showHiddenContentAfterDelay(1);
+
+        updateViewerCounter();
+    </script>
+</body>
+</html>
